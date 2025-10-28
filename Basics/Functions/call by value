@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+// Function declaration: a and b are formal parameters that receive only the values of x and y
+void sum(int a,int b);
+
+int main()
+{
+    int x = 10, y = 20; // Actual arguments stored in main function
+
+    sum(x, y); // Passing only values of x and y to the function (Call by Value)
+
+    cout << "actual arguments" << endl;
+    cout << "x = " << x << endl; // Prints original value of x (unchanged)
+    cout << "y = " << y << endl; // Prints original value of y (unchanged)
+
+    // Printing memory addresses of actual arguments
+    cout << "address of x = " << &x << endl;
+    cout << "address of y = " << &y << endl;
+
+    return 0;
+}
+
+// Function definition
+// Here 'a' and 'b' are new variables created inside the function
+void sum(int a,int b)
+{
+    // NOTE:
+    // Any changes made to a and b will not affect x and y in main()
+    // because only copies of values are passed
+
+    a = 25; // Changing local copy of x
+    b = 35; // Changing local copy of y
+
+    cout << "formal arguments" << endl;
+    cout << "a = " << a << endl; // Shows updated values inside function
+    cout << "b = " << b << endl;
+
+    // Printing different memory addresses proving that a and b are separate variables
+    cout << "address of a = " << &a << endl;
+    cout << "address of b = " << &b << endl;
+}
