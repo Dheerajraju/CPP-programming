@@ -1,0 +1,46 @@
+// Program to demonstrate array elements and pointer arithmetic in C++
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    // Declare and initialize array 'a' with 5 integer elements
+    int a[5] = {10, 20, 30, 40, 50};
+    int i;
+
+    // Loop to print each element of the array with its index
+    for(i = 0; i < 5; i++)
+    {
+        // a[i] gives the value stored at index i
+        cout << "a[" << i << "] = " << a[i] << endl;
+    }
+
+    // Printing the address stored in array name 'a'
+    // Here, 'a' represents the base address of the array (address of a[0])
+    cout << "a = " << a << endl;
+
+    // Pointer arithmetic: each integer takes 4 bytes of memory
+    // So, a+1 means move 4 bytes ahead from the base address
+    cout << "a + 0 = " << a + 0 << endl; // Address of a[0]
+    cout << "a + 1 = " << a + 1 << endl; // Address of a[1]
+    cout << "a + 2 = " << a + 2 << endl; // Address of a[2]
+    cout << "a + 3 = " << a + 3 << endl; // Address of a[3]
+    cout << "a + 4 = " << a + 4 << endl; // Address of a[4]
+
+    return 0;
+}
+
+
+
+o/p:
+a[0]=10
+a[1]=20
+a[2]=30
+a[3]=40
+a[4]=50
+a=0x7ffef0fa6340
+a+0=0x7ffef0fa6340
+a+1=0x7ffef0fa6344
+a+2=0x7ffef0fa6348
+a+3=0x7ffef0fa634c
+a+4=0x7ffef0fa6350
