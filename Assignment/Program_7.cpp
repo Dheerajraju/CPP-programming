@@ -3,29 +3,26 @@
 using namespace std;
 
 class Student {
+public:
     int roll;
     string name;
-public:
-    friend istream& operator>>(istream &in, Student &s);
-    friend ostream& operator<<(ostream &out, Student &s);
+
+    // Operator overloading
+    friend istream& operator>>(istream &in, Student &s) {
+        in >> s.roll >> s.name;
+        return in;
+    }
+
+    friend ostream& operator<<(ostream &out, const Student &s) {
+        out << s.roll << " " << s.name;
+        return out;
+    }
 };
-
-istream& operator>>(istream &in, Student &s) {
-    cout << "Enter Roll No: ";
-    in >> s.roll;
-    cout << "Enter Name: ";
-    in >> s.name;
-    return in;
-}
-
-ostream& operator<<(ostream &out, Student &s) {
-    out << "Roll No: " << s.roll << ", Name: " << s.name;
-    return out;
-}
 
 int main() {
     Student s;
+    cout << "Enter roll number and name: ";
     cin >> s;
-    cout << s;
+    cout << "Student Details: " << s;
     return 0;
 }
