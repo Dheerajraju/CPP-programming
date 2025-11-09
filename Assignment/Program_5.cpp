@@ -1,5 +1,5 @@
-//write a program to implement predecrement operator function usinf member and friend fumction
-//predrecement opertor using member function
+//write a program to implement predecrement operator function using member and friend function
+//pre-drecement opertor using member function
 #include <iostream>
 using namespace std;
 
@@ -38,7 +38,7 @@ int main() {
 }
 
 
-//predrecement using friend function
+//pre-drecement using friend function
 #include <iostream>
 using namespace std;
 
