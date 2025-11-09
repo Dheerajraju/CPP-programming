@@ -4,38 +4,35 @@
 using namespace std;
 
 class Number {
-private:
+public:
     int value;
 
-public:
-    Number(int v = 0) {
-        value = v;
+    void getData() {
+        cin >> value;
+    }
+
+    void showData() {
+        cout << "Value = " << value << endl;
     }
 
     // Post-decrement using member function
-    Number operator--(int) { 
-        Number temp = *this; // store old value
-        value--;             // decrement value
-        return temp;         // return old value
-    }
-
-    void display() {
-        cout << "Value = " << value << endl;
+    void operator--(int) {
+        value--;   // Just decrement, don’t return old value
     }
 };
 
 int main() {
-    Number n(10);
-    cout << "Before decrement: ";
-    n.display();
+    Number n;
+    cout << "Enter value: ";
+    n.getData();
 
-    Number result = n--; // post-decrement
+    cout << "Before decrement: ";
+    n.showData();
+
+    n--;  // Calls member function
 
     cout << "After post-decrement: ";
-    n.display();
-
-    cout << "Returned value (before decrement): ";
-    result.display();
+    n.showData();
 
     return 0;
 }
@@ -46,40 +43,36 @@ int main() {
 using namespace std;
 
 class Number {
-private:
+public:
     int value;
 
-public:
-    Number(int v = 0) {
-        value = v;
+    void getData() {
+        cin >> value;
     }
 
-    friend Number operator--(Number &n, int); // Declaration
-
-    void display() {
+    void showData() {
         cout << "Value = " << value << endl;
     }
+
+    friend void operator--(Number &n, int);  // Friend function
 };
 
-// Friend function definition
-Number operator--(Number &n, int) {
-    Number temp = n;  // store current value
-    n.value--;        // decrement actual object
-    return temp;      // return old value
+void operator--(Number &n, int) {
+    n.value--;  // Just decrement
 }
 
 int main() {
-    Number n(15);
-    cout << "Before decrement: ";
-    n.display();
+    Number n;
+    cout << "Enter value: ";
+    n.getData();
 
-    Number result = n--; // Calls friend function
+    cout << "Before decrement: ";
+    n.showData();
+
+    n--;  // Calls friend function
 
     cout << "After post-decrement: ";
-    n.display();
-
-    cout << "Returned value (before decrement): ";
-    result.display();
+    n.showData();
 
     return 0;
 }
