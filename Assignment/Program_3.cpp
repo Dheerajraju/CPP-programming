@@ -3,63 +3,36 @@
 using namespace std;
 
 class Number {
-private:
-    float value;   // Data member
-
 public:
-    // Default and Parameterized Constructor
-    Number(float v = 0) {
-        value = v;
-    }
+    float value;
 
-    // Function to read input
-    void input() {
-        cout << "Enter value: ";
+    void getData() {
         cin >> value;
     }
 
-    // Function to display output
-    void display() {
-        cout << value << endl;
-    }
-
-    // Overload * operator
-    Number operator * (Number &obj) {
+    Number operator*(Number n) {
         Number temp;
-        temp.value = this->value * obj.value;
+        temp.value = value * n.value;
         return temp;
     }
 
-    // Overload / operator
-    Number operator / (Number &obj) {
+    Number operator/(Number n) {
         Number temp;
-        if (obj.value != 0)
-            temp.value = this->value / obj.value;
-        else {
-            cout << "Error: Division by zero!" << endl;
-            temp.value = 0;
-        }
+        temp.value = value / n.value;
         return temp;
     }
 };
 
 int main() {
-    Number ob1, ob2, ob4, ob3;
+    Number ob1, ob2, ob3, ob4;
 
-    cout << "Enter value for ob1: ";
-    ob1.input();
+    cout << "Enter ob1, ob2 and ob4 values: ";
+    ob1.getData();
+    ob2.getData();
+    ob4.getData();
 
-    cout << "Enter value for ob2: ";
-    ob2.input();
-
-    cout << "Enter value for ob4: ";
-    ob4.input();
-
-    // Expression: ob3 = ob1 * ob2 / ob4
     ob3 = ob1 * ob2 / ob4;
 
-    cout << "\nResult (ob3 = ob1 * ob2 / ob4) = ";
-    ob3.display();
-
+    cout << "Result = " << ob3.value;
     return 0;
 }
