@@ -4,12 +4,11 @@
 using namespace std;
 
 class Number {
-private:
+public:
     int value;
 
-public:
-    Number(int v = 0) {   // Constructor
-        value = v;
+    void getData() {
+        cin >> value;
     }
 
     // Pre-decrement using member function
@@ -17,20 +16,23 @@ public:
         --value;
     }
 
-    void display() {
+    void showData() {
         cout << "Value = " << value << endl;
     }
 };
 
 int main() {
-    Number n(10);
-    cout << "Before decrement: ";
-    n.display();
+    Number n;
+    cout << "Enter value: ";
+    n.getData();
 
-    --n;   // Calls member function
+    cout << "Before decrement: ";
+    n.showData();
+
+    --n;  // Calls member operator function
 
     cout << "After pre-decrement: ";
-    n.display();
+    n.showData();
 
     return 0;
 }
@@ -41,37 +43,39 @@ int main() {
 using namespace std;
 
 class Number {
-private:
+public:
     int value;
 
-public:
-    Number(int v = 0) {
-        value = v;
+    void getData() {
+        cin >> value;
     }
 
-    // Friend function for pre-decrement
-    friend Number operator--(Number &n);
-
-    void display() {
+    void showData() {
         cout << "Value = " << value << endl;
     }
+
+    // Friend function declaration
+    friend void operator--(Number &n);
 };
 
 // Friend function definition
-Number operator--(Number &n) {
-    --n.value;   // Pre-decrement
-    return n;
+void operator--(Number &n) {
+    --n.value;  // Pre-decrement
 }
 
 int main() {
-    Number n(15);
-    cout << "Before decrement: ";
-    n.display();
+    Number n;
+    cout << "Enter value: ";
+    n.getData();
 
-    --n;   // Calls friend function
+    cout << "Before decrement: ";
+    n.showData();
+
+    --n;  // Calls friend function
 
     cout << "After pre-decrement: ";
-    n.display();
+    n.showData();
 
     return 0;
 }
+
