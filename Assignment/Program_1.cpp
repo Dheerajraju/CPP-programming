@@ -6,26 +6,19 @@
 using namespace std;
 
 class Swap {
-private:
     int a, b;
-
 public:
-    // Function to take input
-    void setData(int x, int y) {
-        a = x;
-        b = y;
-    }
-
-    // Function to display values
-    void display() {
-        cout << "a = " << a << ", b = " << b << endl;
-    }
-
-    // Friend function declaration
     friend void swapValues(Swap &s);
+
+    void getData() {
+        cin >> a >> b;
+    }
+
+    void show() {
+        cout << a << " " << b << endl;
+    }
 };
 
-// Friend function definition
 void swapValues(Swap &s) {
     int temp = s.a;
     s.a = s.b;
@@ -34,22 +27,16 @@ void swapValues(Swap &s) {
 
 int main() {
     Swap s;
-    int x, y;
-
     cout << "Enter two numbers: ";
-    cin >> x >> y;
+    s.getData();
 
-    s.setData(x, y);
+    cout << "Before swap: ";
+    s.show();
 
-    cout << "Before swapping: ";
-    s.display();
-
-    // Call friend function
     swapValues(s);
 
-    cout << "After swapping: ";
-    s.display();
+    cout << "After swap: ";
+    s.show();
 
     return 0;
 }
-
