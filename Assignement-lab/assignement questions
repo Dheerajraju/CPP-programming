@@ -1,0 +1,44 @@
+C++ Assignments 
+    1.  Write a C++ program to swap two variables using function. (Don't use Pointers).
+    2. Write a C++ program to swap two integers, floats and characters using function Overloading.
+    3. Write a C++ program to find the area of rectangle, triangle, and sphere using function Overloading.
+    4. Write a C++ program to define a function with default arguments. Whenever the function needs default values of arguments, it will prompt the user to enter a default value. 
+    5. Write C++ program to calculate simple interest. Define the class called interest and hide the data elements of the class using private keyword. Define the setdata member function to read the data through keyboard and 	define the print member function outside the class.
+	Formula : interest = (P * N * R) / 100;
+	Total_amount = interest + P;
+	here,  	P -> Principle amount
+       	  	        N -> Period (No.of years)
+          		R -> rate of interest
+    6. Write a C++ program to define a class called Student with data members as rollnum, name and marks. Define the appropriate member functions, 1)setdata 2)display for reading and displaying the data and also define a	member function called sort_data() to sort 5 students records according to roll, name & marks.
+    7. Write a C++ program to create a class Complex with real and imaginary parts perform addition and subtraction of two complex objects.
+    8. Write a C++ Program to define 3 classes. Read & Display the data for 3 classes using friend function.
+    9. Write a C++ Program to exchange values of two variables between two classes using friend function.
+    10. Write a C++ program to find total salary of husband and wife using a friend function. Create  a class to hold the information of husband and another for the wife information.
+    11.  Write a C++ Program to declare 3 classes. Declare private integers array as data members in each class. Perform addition of two data member arrays into array of third class using friend function.
+    12. Write a C++ program to demonstrate Shallow Copy.
+    13. Write a C++ proam to demonstrate Deep Copy.
+    14. Write a C++ program to impliment Private Constructor.
+    15. Write a C++ program to demonstrate Dynamic Constructor.
+    16. Write a C++ program to sort the given five names from the keyboard and print it in the sorted order. (Use C++'s DMA).
+    17. Write a C++ program to demonstrate Singleton Class.
+    18.  Write a C++ program to Overload Post increment(++) and Pre increment(++) operators  using freind function.
+    19. Write a C++ program to  Overload binary ' + ' operator for the given expression.
+        OBJ2 = 100+OBJ1 (Hint: Use Friend Function)
+    20. Write a C++ program to Overload  insertion (<<) and extraction (>>) operators using friend functions.
+    21. Write a C++ program to Overload new and delete operators.
+    22. Write a C++ program to Overload -> operator.
+    23. Write a C++ program to demonstrate Hybrid Inheritence.
+    24. Consider a example of declaring the examination result. Design three classes: student, exam 	and result. The student class has data members such as those representing roll 	number,name etc. Create the class exam by inheriting the student class. The exam class 	adds data members representing the marks scored in six subjects. Derive the result from the 	exam class and it has its own data members such as total_marks. Write an interactive program to model this relationship. What type of inheritance this model belongs to ?
+    25. Write a C++ program to design a base class called student with name, roll and age as its data members. Using inheritance create two new classes  UGStudent and PGStudent with semester, fees and datepaid as their data members. Enter the data for 5 students. Find the  average age, semester-wise for all UG and PG students. 
+    26. Write a C++ program to sort data items in ascending order using function templates. 
+    27. Write a  C++ to overload a template function.
+    28. Write a  C++  to exchange the values of two variables. Using template variables as a function arguments in generic way ?
+    29. Write a C++ program to implement Stack using class templates.
+    30. Write a C++ program to implement Queue using class templates.
+    31. Write a C++ program  define definition of member function template outside the class and  invoke the function  to overload + operator for performing addition of two template based class objects ?
+    32. Write a C++ program to define virtual destructors ?
+    33. Write a C++ program to explain the nested class.
+    34. Write a C++ program to explain the this pointer.
+    35. Write a C++ program to accept 10 integers in an array.check all numbers in the array.when  any negative number is found, throw an exception?
+
+ 
